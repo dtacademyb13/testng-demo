@@ -30,8 +30,8 @@ public class TestNgDemo {
     }
 
 
-    @Test
-    public void testGoogle(){
+    @Test (priority = 3)
+    public void testGoogle1(){
 
         driver.get("https://www.google.com/");
         String searchTerm = "coffee mug";
@@ -41,7 +41,7 @@ public class TestNgDemo {
     }
 
 
-    @Test
+    @Test (priority = 1)
     public void testGoogle2(){
         driver.get("https://www.google.com/");
         String searchTerm = "tumbler";
@@ -50,12 +50,12 @@ public class TestNgDemo {
 
     }
 
-    @Test
+    @Test (priority = 2)
     public void testGoogle3(){
         driver.get("https://www.google.com/");
         String searchTerm = "screen protector";
         driver.findElement(By.name("q")).sendKeys(searchTerm, Keys.ENTER);
-        Assert.assertTrue(driver.getTitle().contains(searchTerm));
+        Assert.assertTrue(driver.getTitle().contains(searchTerm+"sdbvasb"));
 
     }
 
