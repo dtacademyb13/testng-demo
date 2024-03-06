@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Example Test Suite">
+
+    <test name="UI Tests">
+
+
+       <classes>
+           <class name="demo.TestingRegex">
+               <methods>
+<!--                   <include name="test.*"/>-->
+<!--                   starts with test-->
+<!--                   <include name=".*API"/>-->
+<!--                   ends with API-->
+                   <include name=".*002.*"/>
+<!--                   contains 002 -->
+               </methods>
+           </class>
+       </classes>
+
+
+    </test>
+
+
+</suite>

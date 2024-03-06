@@ -3,33 +3,33 @@ package demo;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
-public class Priority {
+public class TestingRegex {
 
 
 
-    @Test (priority = 0, enabled = false)
-    public void testA(){
+    @Test
+    public void test_001_UI(){
         System.out.println("A");
     }
 
-    @Ignore
-    @Test (priority = -34)
-    public void testB(){
+
+    @Test
+    public void test_002_UI(){
         System.out.println("B");
     }
 
-    @Test (priority = 1000)
-    public void testC(){
+    @Test
+    public void test_003_UI(){
         System.out.println("C");
     }
 
     @Test
-    public void testD(){
+    public void tc_001_API(){
         System.out.println("D");
     }
 
-    @Test (priority = 2)
-    public void testE(){
+    @Test
+    public void tc_002_API(){
         System.out.println("E");
     }
 }

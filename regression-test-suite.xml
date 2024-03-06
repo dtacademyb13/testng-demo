@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Regression Test Suite">
+
+    <test name="UI Regression Tests">
+
+        <packages>
+            <package name="another"/>
+            <package name="demo"/>
+        </packages>
+
+    </test>
+
+
+</suite>

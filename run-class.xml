@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Example Test Suite">
+
+    <test name="UI Tests">
+
+        <classes>
+            <class name="demo.Priority"/>
+            <class name="another.TestNgDemo"/>
+        </classes>
+
+
+    </test>
+
+
+</suite>
