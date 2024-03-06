@@ -12,6 +12,17 @@ import java.time.Duration;
 public class ConfigurationAnnotations {
 
 
+    @BeforeGroups (groups = "smoke")
+    public void setupGroup(){
+                System.out.println("Smoke tests BEFORE SETUP");
+    }
+    @AfterGroups (groups = "smoke")
+    public void tearDownGroup(){
+        System.out.println("Smoke tests AFTER TEARDOWN");
+    }
+
+
+
  WebDriver driver;
 
 
@@ -51,7 +62,7 @@ public class ConfigurationAnnotations {
     }
 
 
-    @BeforeMethod
+    @BeforeMethod (alwaysRun = true)
     public void setup(){
         System.out.println("Before Method");
         driver  = new ChromeDriver();
@@ -59,14 +70,14 @@ public class ConfigurationAnnotations {
         driver.manage().window().maximize();
     }
 
-    @AfterMethod
+    @AfterMethod (alwaysRun = true)
     public void tearDown(){
         System.out.println("After Method");
         driver.quit();
     }
 
 
-    @Test
+    @Test (groups = {"smoke", "flaky", "googleSearch"} )
     public void testGoogle(){
         System.out.println("test 1");
         driver.get("https://www.google.com/");
@@ -76,7 +87,7 @@ public class ConfigurationAnnotations {
 
     }
 
-    @Test
+    @Test (groups = "smoke")
     public void testGoogle2(){
         System.out.println("test 2");
         driver.get("https://www.google.com/");

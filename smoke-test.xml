@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Example Test Suite" >
+
+    <test name="UI Tests">
+
+
+<!--        When you run group tests the @Before and @After annotations do NOT run by default
+    to make them run, use alwaysRun attribute by setting it to true-->
+
+        <groups>
+            <run>
+                <include name="smoke"/>
+<!--                <include name="flaky"/>-->
+            </run>
+        </groups>
+
+
+       
+        <packages>
+            <package name="demo"/>
+        </packages>
+
+
+
+
+    </test>
+
+
+</suite>

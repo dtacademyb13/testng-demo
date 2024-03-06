@@ -17,14 +17,14 @@ public class TestNgDemo {
 
     WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod (alwaysRun = true)
     public void setup(){
         driver  = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
     }
 
-    @AfterMethod
+    @AfterMethod (alwaysRun = true)
     public void tearDown(){
         driver.quit();
     }
@@ -50,7 +50,7 @@ public class TestNgDemo {
 
     }
 
-    @Test (priority = 2)
+    @Test (priority = 2, groups = "smoke")
     public void testGoogle3(){
         driver.get("https://www.google.com/");
         String searchTerm = "screen protector";

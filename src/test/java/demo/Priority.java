@@ -18,7 +18,7 @@ public class Priority {
         System.out.println("B");
     }
 
-    @Test (priority = 1000)
+    @Test (priority = 1000, groups = "smoke")
     public void testC(){
         System.out.println("C");
     }
